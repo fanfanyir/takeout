@@ -1,10 +1,18 @@
 const path  = require('path');
+const fs = require('fs');
 const srcRoot = path.resolve(__dirname, 'src');
 const devPath = path.resolve(__dirname, 'dev');
 const pageDir = path.resolve(srcRoot, 'page');
+const mainFile = 'index.js';
 
 function getEntry() {
   let entryMap = {};
+
+  fs.readdirSync(pageDir).forEach((pathname) => {
+    let fullPathName = path.resolve(pageDir, pathname);
+    let stat = fs.statSync(fullPathName);
+    let fileNamw = path.resolve(fullPathName, mainFile);
+  })
 }
 module.exports = {
   entry: {},
