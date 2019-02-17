@@ -1,0 +1,22 @@
+{
+  "name": "takeout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fanfanyir/takeout.git"
+  },
+  "author": "ifan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanfanyir/takeout/issues"
+  },
+  "homepage": "https://github.com/fanfanyir/takeout#readme",
+  "dependencies": {
+    "webpack": "^4.3.0"
+  }
+}
