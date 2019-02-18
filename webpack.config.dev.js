@@ -6,6 +6,23 @@ const devPath = path.resolve(__dirname, 'dev');
 const pageDir = path.resolve(srcRoot, 'page');
 const mainFile = 'index.js';
 
+function getHtmlArray(entryMap) {
+  let htmlArray = [];
+  Object.keys(entryMap).forEach((key) => {
+    let fullPathName = path.resolve(pageDir, key);
+    let fileName = path.resolve(fullPathName, key + '.html');
+
+    if(fs.existsSync(fileName)) {
+      htmlArray.push(new HtmlWebpackPlugin({
+        filename: key + '.html',
+        template: fileName,
+        chunks: [key]
+      }))
+    }
+  });
+  return htmlArray;
+}
+
 function getEntry() {
   let entryMap = {};
 
@@ -22,7 +39,9 @@ function getEntry() {
   return entryMap;
 }
 
+
 const entryMap = getEntry();
+const htmlArray = getHtmlArray(entryMap);
 module.exports = {
   mode: 'development',
   entry: entryMap,
@@ -39,6 +58,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin()
-  ]
+    
+  ].concat(htmlArray)
 }
