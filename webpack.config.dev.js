@@ -11,14 +11,23 @@ function getEntry() {
   fs.readdirSync(pageDir).forEach((pathname) => {
     let fullPathName = path.resolve(pageDir, pathname);
     let stat = fs.statSync(fullPathName);
-    let fileNamw = path.resolve(fullPathName, mainFile);
-  })
+    let fileName = path.resolve(fullPathName, mainFile);
+
+    if(stat.isDirectory() && fs.existsSync(fileName)){
+      entryMap[pathname] = fileName;
+    }
+  });
+
+  return entryMap;
 }
 
-
+const entryMap = getEntry();
 module.exports = {
-  entry: {},
-  output: {},
+  entry: entryMap,
+  output: {
+    path: devPath,
+    filename: '[name].min.js'
+  },
   module: {
     rules: [
       { test: /\.css$/, use:['style-loader', 'css-loader'], include: srcRoot},
