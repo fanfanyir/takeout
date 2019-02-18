@@ -14,6 +14,8 @@ function getEntry() {
     let fileNamw = path.resolve(fullPathName, mainFile);
   })
 }
+
+
 module.exports = {
   entry: {},
   output: {},
