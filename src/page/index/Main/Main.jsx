@@ -16,7 +16,10 @@ class Main extends React.Component {
   render() {
     let num = this.props.num;
     return (
-      <div onClick={() => this.click()}>{num}</div>
+      <div>
+        <div className={'abc'} onClick={() => this.click()}>{num}</div>
+        <div onClick={() => this.click()}>{num}</div>
+      </div>
     )
   }
 }
