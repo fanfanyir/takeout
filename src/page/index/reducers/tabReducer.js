@@ -1,5 +1,4 @@
 import { ADD_TODO } from '../actions/actionTypes.js';
-import { addTodo } from '../actions/tabAction.js';
 
 const initState = {
   num: 0
@@ -20,3 +19,5 @@ const tabReducer = ( state = initState, action ) => {
     default: return state;
   }
 }
+
+export default tabReducer;
