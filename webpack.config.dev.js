@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path  = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
@@ -45,7 +46,8 @@ const htmlArray = getHtmlArray(entryMap);
 module.exports = {
   mode: 'development',
   devServer: {
-    contentBase: devPath
+    contentBase: devPath,
+    hot: true
   },
   entry: entryMap,
   resolve: {
@@ -69,6 +71,7 @@ module.exports = {
     ]
   },
   plugins: [
-    
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ].concat(htmlArray)
 }
