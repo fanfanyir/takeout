@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from './Header/Header';
+import Category from './Category/Category';
 
 /**
  * @constructor <Home />
@@ -13,6 +14,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <Header />
+        <Category />
       </div>
     )
   }
