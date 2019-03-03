@@ -4,9 +4,9 @@ import './ContentList.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 
-// import ListItem from 'component/ListItem/ListItem.jsx';
+import ListItem from 'component/ListItem/ListItem.jsx';
 
-// import ScrollView from 'component/ScrollView/ScrollView.jsx';
+import ScrollView from 'component/ScrollView/ScrollView.jsx';
 
 import { getListData } from '../../actions/contentListAction';
 
@@ -52,12 +52,12 @@ class ContentList extends React.Component {
     }
 
 
-    // renderItems(){
-    //     let list = this.props.list;
-    //     return list.map((item, index)=>{
-    //         return <ListItem key={index} itemData={item}></ListItem>
-    //     });
-    // }
+    renderItems(){
+        let list = this.props.list;
+        return list.map((item, index)=>{
+            return <ListItem key={index} itemData={item}></ListItem>
+        });
+    }
 
     render(){
         return (
@@ -67,9 +67,9 @@ class ContentList extends React.Component {
                     <span>附近商家</span>
                     <span className="title-line"></span>
                 </h4>
-                {/* <ScrollView dis="content" loadCallback={this.onLoadPage.bind(this)} isend={this.state.isend}>
+                <ScrollView dis="content" loadCallback={this.onLoadPage.bind(this)} isend={this.state.isend}>
                     {this.renderItems()}
-                </ScrollView> */}
+                </ScrollView>
             </div>
         );
     }

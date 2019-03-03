@@ -2,15 +2,10 @@ import './ListItem.scss';
 
 
 import React from 'react';
-
-
-
 import { connect } from 'react-redux';
-
 
 import StarScore from 'component/StarScore/StarScore';
 // import jsinvoke from 'component/jsapi';
-
 
 /**
  * @constructor <ListItem />
