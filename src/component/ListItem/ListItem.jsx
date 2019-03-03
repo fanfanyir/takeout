@@ -113,7 +113,7 @@ class ListItem extends React.Component {
     }
 }
 export default connect(
-    // state =>({
-    //     list: state.contentListReducer.list
-    // })
+    state =>({
+        list: state.contentListReducer.list
+    })
 )(ListItem);
