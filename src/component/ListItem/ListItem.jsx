@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import StarScore from 'component/StarScore/StarScore';
 // import jsinvoke from 'component/jsapi';
 
+
 /**
  * @constructor <ListItem />
  * @description 列表单个组件
