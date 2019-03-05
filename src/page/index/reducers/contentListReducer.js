@@ -1,11 +1,11 @@
-import { LIST_DATA } from '../actions/contentListAction.js';
+import { LIST_DATA } from '../actions/actionTypes.js';
 
 const initState = {
   list: []
 }
 
 const getListDate = (state, action) => {
-  console.log(action.obj.data);
+  console.log(action.obj.data,1111);
   if(action.currentPage === 0){
     return {...state, list: action.obj.data.poilist};
   }else {

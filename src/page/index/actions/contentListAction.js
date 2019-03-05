@@ -1,4 +1,4 @@
-import { LIST_DATA } from './actionTypes';
+import { LIST_DATA } from './actionTypes.js';
 import axios from 'axios';
 
 export const getListData = (page) => (dispatch) => {
