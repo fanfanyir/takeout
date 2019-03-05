@@ -47,8 +47,7 @@ class ContentList extends React.Component {
     }
 
     fetchData(page){
-        this.props.dispatch(getListData(page));
-        
+        this.props.dispatch(getListData(page));   
     }
 
 
@@ -68,7 +67,7 @@ class ContentList extends React.Component {
                     <span className="title-line"></span>
                 </h4>
                 <ScrollView dis="content" loadCallback={this.onLoadPage.bind(this)} isend={this.state.isend}>
-                    {this.renderItems()}
+                    <div>{this.renderItems()}</div>
                 </ScrollView>
             </div>
         );
