@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import BottomBar from '../BottomBar/BottomBar';
-import Home from '../Home/Home';
+// import Home from '../Home/Home';
 import Order from '../Order/Order';
 
 class Main extends React.Component {
