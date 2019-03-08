@@ -1,6 +1,6 @@
 import React from 'react';
 import './Order.scss';
-
+import OrderList from './OrderList/OrderList.jsx';
 /**
  * @constructor <Order />
  * @description 订单 tab 代码
@@ -11,6 +11,7 @@ class Order extends React.Component {
     return (
       <div className="order">
         <div className="header">订单</div>
+        <OrderList />
       </div>
     )
   }
