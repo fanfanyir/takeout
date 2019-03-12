@@ -7,12 +7,15 @@ import scrollViewReducer from 'component/ScrollView/scrollViewReducer.js';
 
 import { combineReducers } from 'redux';
 
+import { routerReducer } from 'react-router-redux';
+
 const reducers = combineReducers({
   tabReducer,
   categoryReducer,
   contentListReducer,
   scrollViewReducer,
-  orderReducer
+  orderReducer,
+  router: routerReducer
 })
 
 export default reducers;

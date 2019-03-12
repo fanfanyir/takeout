@@ -9,9 +9,9 @@ class ListItem extends React.Component {
    * 渲染每个菜品的总计
    * @param {*} data 
    */
-  renderTotalPrice(item, data) {
+  renderTotalPrice(data, index) {
     return (
-      <div className="product-item">
+      <div key={index} className="product-item">
         <span>...</span>
         <div className="p-total-count">
           总计{data.product_count}个菜，实付
@@ -32,7 +32,7 @@ class ListItem extends React.Component {
 
     return list.map((item, index) => {
       if(item.type === 'more') {
-        return this.renderTotalPrice(item, data)
+        return this.renderTotalPrice(data, index)
       }
       return (
         <div className="product-item" key={index}>
@@ -55,7 +55,7 @@ class ListItem extends React.Component {
     if(evaluation){
       return (
         <div className="evaluation clearfix">
-          <div className="evaiuation-btn">评价</div>
+          <div className="evaluation-btn">评价</div>
         </div>
       )
     }

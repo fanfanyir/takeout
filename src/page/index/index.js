@@ -4,11 +4,17 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 
 import Container from './Main/Container';
-import store from './store.js';
+
+import { store, history } from './store.js';
+
+import { ConnectedRouter } from 'react-router-redux';
+
 
 ReactDom.render(
-  <Provider store={store}>
-    <Container />
-  </Provider>,
-  document.getElementById('root')
-)
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <Container />
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById('root')
+);
