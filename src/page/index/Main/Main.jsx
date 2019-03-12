@@ -16,9 +16,7 @@ class Main extends React.Component {
         super(props);
 
     }
-
     render(){
-
         return (
             <div>
                 <Route exact path="/home" component={Home}/>
