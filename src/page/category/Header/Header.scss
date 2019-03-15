@@ -16,9 +16,11 @@
     .item {
         font-size: px2rem(13px);
         color: #2f2f2f;
+
         border-right: 1px solid #ddd;
         flex: 1;
         text-align: center;
+        
         position: relative;
         &:last-child {
             border: none;

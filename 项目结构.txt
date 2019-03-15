@@ -1,0 +1,23 @@
+--category
+  --actions
+  --ContentList
+  --Header
+  --Main
+  --reducers
+  category.html
+  config.js
+  index.js
+  store.js
+
+--index
+  --actions
+  --BottomBar
+  --Home
+  --Main
+  --My
+  --Order
+  --reducers
+  config.js
+  index.html
+  index.js
+  store.js
