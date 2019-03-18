@@ -1,9 +1,6 @@
 import './Header.scss';
-
 import React from 'react';
-
 import { connect } from 'react-redux';
-
 import { TABKEY } from '../config';
 
 import { changeTab, getFilterData,changeFilter } from '../actions/headerAction'; 
