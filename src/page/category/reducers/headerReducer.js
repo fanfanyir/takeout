@@ -33,9 +33,12 @@ const initState = {
 const changeTab = (state, action) => {
     return { ...state, activeKey: action.obj.activeKey, closePanel:action.obj.closePanel };
 }
+
 const getFilterData = (state, action) => {
     return { ...state, filterData: action.obj.data };
 }
+
+// 更换顶部 tab 对应项为选中 item
 const changeFilter = (state, action) => {
     let _tabs = JSON.parse(JSON.stringify(state.tabs));
     _tabs[action.obj.key] = {

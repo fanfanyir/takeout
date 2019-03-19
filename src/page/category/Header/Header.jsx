@@ -6,6 +6,9 @@ import { TABKEY } from '../config';
 import { changeTab, getFilterData,changeFilter } from '../actions/headerAction'; 
 import { getListData } from '../actions/contentListAction';
 
+/**
+ * 分类、排序、点击显示浮层
+ */
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +17,8 @@ class Header extends React.Component {
     fetchData(){
         this.props.dispatch(getFilterData());
     }
+
+
     /**
      * 充值其他item的active状态
      */
@@ -40,19 +45,28 @@ class Header extends React.Component {
      * 变化当前点击的item状态 同时发起filter的请求
      */
     changeDoFilter(item, key, dataList){
+        /**
+         * 把每一项都置灰，即它的 active 状态置为 false
+         */
         this.revertActive(key, dataList);
+        // 对应的当前选中项加上选中样式
         item.active = true;
+
+        // 更换顶部 tab 对应项为选中 item
         this.props.dispatch(changeFilter({
             item,
             key
         }));
 
+        // 根据当前条件拉取新的 List 值
         this.props.dispatch(getListData({
             filterData: item,
             toFirstPage: true
         }));
 
     }
+
+
     /**
      * 点击切换tab
      */
@@ -87,9 +101,10 @@ class Header extends React.Component {
                 </div>
             );
         }
-
         return array;
     }
+
+
     /**
      * 筛选内部的每个类目
      */
@@ -139,6 +154,8 @@ class Header extends React.Component {
             );
         })
     }
+
+
     /**
      * 全部分类里面的每个条目
      */
@@ -172,6 +189,7 @@ class Header extends React.Component {
             )
         });
     }
+
     /**
      * 渲染过滤面板
      */
@@ -221,6 +239,8 @@ class Header extends React.Component {
                 <div className="header-top">
                     {this.renderTabs()}
                 </div>
+
+
                 <div className={cls}>
                     <div className="panel-inner">
                         {this.renderContent()}
