@@ -68,7 +68,6 @@ class ListItem extends React.Component {
      */
     renderOthers(data) {
         let array = data.discounts2;
-
         return array.map((item, index)=>{
             return (
                 <div key={index} className="other-info">
@@ -90,8 +89,8 @@ class ListItem extends React.Component {
         //     console.log(val);
         // });
     }
-    render(){
 
+    render(){
         let data = this.props.itemData;
         return (
             <div onClick={()=>this.goDetail(data)} className="r-item-content scale-1px">
@@ -117,6 +116,7 @@ class ListItem extends React.Component {
         );
     }
 }
+
 export default connect(
     // state =>({
     //     list: state.contentListReducer.list

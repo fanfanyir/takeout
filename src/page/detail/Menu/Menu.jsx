@@ -3,7 +3,6 @@ import './Menu.scss';
 import React from 'react';
 
 import { connect } from 'react-redux';
-
 import { getListData, itemClick } from '../actions/menuAction';
 
 import MenuItem from './MenuItem/MenuItem';
@@ -40,7 +39,9 @@ class Menu extends React.Component {
      * 渲染右边的列表
      */
     renderRight(){
+        // 当前点击的左边标签
         let index = this.props.currentLeftIndex;
+        
         let array = this.props.listData.food_spu_tags || [];
         let currentItem = array[index];
 
@@ -54,6 +55,7 @@ class Menu extends React.Component {
             return null;
         }
     }
+
     /**
      * 渲染左边的列表
      */
@@ -69,18 +71,22 @@ class Menu extends React.Component {
             );
         });
     }
+
     render(){
 
         return (
             <div className="menu-inner">
+
                 <div className="left-bar">
                     <div className="left-bar-inner">
                         {this.renderLeft()}
                     </div>
                 </div>
+
                 <div className="right-content">
                     {this.renderRight()}
                 </div>
+
                 <ShopBar />
             </div>
         );

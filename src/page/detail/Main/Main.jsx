@@ -31,8 +31,10 @@ class Main extends React.Component {
     }
     render(){
         let poiName = this.props.poiInfo.poi_info ? this.props.poiInfo.poi_info.name : '';
+        
         return (
             <div className="detail">
+
                 <NavHeader title={poiName}/>
                 <div className="tab-bar">
                     {this.renderTabs()}
