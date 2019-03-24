@@ -104,7 +104,6 @@ class Header extends React.Component {
         return array;
     }
 
-
     /**
      * 筛选内部的每个类目
      */

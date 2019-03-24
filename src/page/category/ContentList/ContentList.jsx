@@ -1,13 +1,9 @@
 import './ContentList.scss';
-
-
 import React from 'react';
 import { connect } from 'react-redux';
-
 import ListItem from 'component/ListItem/ListItem.jsx';
 
 import ScrollView from 'component/ScrollView/ScrollView.jsx';
-
 import { getListData } from '../actions/contentListAction';
 
 
@@ -34,6 +30,7 @@ class ContentList extends React.Component {
     }
 
     fetchData(){
+        // 派发 action
         this.props.dispatch(getListData({}))
     }
 
@@ -54,6 +51,8 @@ class ContentList extends React.Component {
         );
     }
 }
+
+
 export default connect(
     state =>({
         list: state.contentListReducer.list,
