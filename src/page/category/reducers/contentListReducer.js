@@ -8,6 +8,7 @@ const initState = {
 };
 
 const getListData = (state, action) =>{
+
     let _listData = [];
     let _filterData = action.filterData || state.filterData;
     let _page = action.toFirstPage ? 0 : state.page;
@@ -23,6 +24,7 @@ const getListData = (state, action) =>{
     }
     return { ...state, list: _listData, filterData: _filterData, page: _page, isend: _isend};
 }
+
 
 const contentListReducer = (state = initState, action) => {
     switch(action.type) {
