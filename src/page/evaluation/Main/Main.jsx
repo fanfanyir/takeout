@@ -8,6 +8,7 @@ import NavHeader from 'component/NavHeader/NavHeader.jsx';
 
 
 class Main extends React.Component {
+
     constructor(props) {
         super(props);
 
@@ -21,6 +22,7 @@ class Main extends React.Component {
             startIndex: 0
         }
     }
+
     componentDidMount(){
         this.commentInput.addEventListener('compositionstart', ()=>{
             this.chineseInputing = true;
@@ -30,6 +32,7 @@ class Main extends React.Component {
             this.onIuput(e.target.value);
         });
     }
+
     /**
      * 用户输入回调
      */
@@ -42,6 +45,7 @@ class Main extends React.Component {
         }
 
     }
+
     /**
      * 点击评分
      */
@@ -50,6 +54,7 @@ class Main extends React.Component {
             startIndex: i + 1
         });
     }
+
     /**
      * 渲染评分用的星
      */
@@ -62,23 +67,30 @@ class Main extends React.Component {
 
         return array;
     }
+
     render(){
+
         return (
             <div className="content">
                 <NavHeader title="评价" />
+
                 <div className="eva-content">
                     <div className="star-area">
                         {this.renderStar()}
                     </div>
+                    
                     <div className="comment">
                         <textarea ref={(ref)=>{this.commentInput = ref}} onChange={(e)=>this.onIuput(e.target.value)} minLength="140" placeholder="亲，菜品的口味如何，商家的服务是否周到?" className="comment-input"></textarea>
                         <span className="count">{this.state.count}</span>
                     </div>
+
                     <p className="one-line product-name">+厚切鸡排 香辣口水鸡饭. 中辣</p>
                 </div>
+
                 <div className="submit">提交评价</div>
             </div>
         );
+
     }
 }
 

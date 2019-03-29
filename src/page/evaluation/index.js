@@ -6,6 +6,8 @@ import Container from './Main/Container.jsx';
 
 
 ReactDom.render(
+    
     <Container />,
+
     document.getElementById('root')
 );
