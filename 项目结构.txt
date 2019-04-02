@@ -1,23 +1,57 @@
 --category
   --actions
+  --reducers
+  --Main
+
   --ContentList
   --Header
-  --Main
-  --reducers
+
   category.html
   config.js
   index.js
   store.js
 
+========================================== 
 --index
   --actions
+  --reducers
+  --Main
+
   --BottomBar
   --Home
-  --Main
   --My
   --Order
-  --reducers
+
   config.js
   index.html
   index.js
   store.js
+
+========================================== 
+--detail
+  --actions
+  --reducers
+  --Main
+
+  --Comment
+  --Menu
+  --Restanurant
+
+  config.js
+  detail.html
+
+  index.html
+  index.js
+  store.js
+
+========================================== 
+--evalustion
+
+  --Main
+    --img
+    Container.jsx
+    Main.jsx
+    Main.scss
+
+  evaluation.html
+  index.js
